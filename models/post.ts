@@ -3,7 +3,6 @@ import { Schema, model, models } from 'mongoose';
 const PostSchema = new Schema({
   creator: {
     type: String,
-    required: false
   },
   post: {
     type: String,
@@ -13,6 +12,8 @@ const PostSchema = new Schema({
     type: String,
     required: [true, 'Tag is required.'],
   }
+},{
+	timestamps: true
 });
 
 const Post = models.Post || model('Post', PostSchema);
