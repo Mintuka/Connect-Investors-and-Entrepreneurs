@@ -58,6 +58,7 @@ const LoginForm = () => {
         {error && (
           <p className="text-center bg-red-300 py-4 mb-6 rounded">{error}</p>
         )}
+        <div className="w-full text-[56px] font-bold text-center mb-4">Share</div>
         <div className="mb-6">
           <input
             required
