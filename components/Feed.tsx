@@ -40,7 +40,10 @@ const Feed = () => {
     }
     return (
             <>
-                <input type="text" className='h-[20px] border outline-none p-4 mb-4 mt-4 rounded-sm' />
+                <div className="flex justify-start items-center relative w-full">
+                    <i className="fa-solid fa-magnifying-glass absolute left-[20px] font-[400]"></i>
+                    <input type="text" className='h-[20px] border outline-none py-4 px-8 my-4 mx-2 rounded-[40px]' placeholder="search"/>
+                </div>
                 <Cards posts={posts}/>
             </>
     )

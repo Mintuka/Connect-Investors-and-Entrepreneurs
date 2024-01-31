@@ -14,7 +14,7 @@ const Card = ({_id, creator, post, tag}: PostType) => {
     }
 
     return (
-        <div onClick={handleDetail} className="col-3 p-5 m-2 border rounded-lg cursor-pointer bg-slate-50 shadow-sm hover:shadow-md" key={_id}>
+        <div onClick={handleDetail} className="col-3 p-5 m-2 border rounded-lg cursor-pointer bg-slate-50 bg-clip-padding shadow-sm hover:shadow-md" key={_id}>
             <div className="flex mb-4">
                 <Image src='assets/images/figma.svg' width={40} height={40} alt='figma' className="mr-2"/>
                 <div>
