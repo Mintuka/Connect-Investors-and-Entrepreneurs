@@ -37,7 +37,7 @@ const Navbar = () => {
                                 {data?.user?.name && data?.user?.name[0]}
                                 <div className={'h-[200vh] w-[200vw] absolute bg-transparent ' + (userDetailOpened ? '' : 'hidden')}></div>
                                 <div className={'border bg-slate-400 absolute top-[40px] h-[10px] w-[10px] rotate-45 ' + (userDetailOpened ? '' : 'hidden')}></div>
-                                <div className={'bg-slate-400 absolute top-[45px] right-[0px] rounded-md p-2 ' + (userDetailOpened ? '' : 'hidden')}>
+                                <div className={'bg-slate-400 absolute top-[45px] right-[0px] rounded-md p-2 z-10 ' + (userDetailOpened ? '' : 'hidden')}>
                                     <div className='text-center p-1'>{data?.user?.name && data?.user?.name}</div>
                                     <div className='p-1'>{data?.user?.email}</div>
                                     <div onClick={handleLogOut} className='p-1 cursor-pointer text-center'>Log Out</div>

@@ -9,7 +9,7 @@ export const DetailProvider = ({children}:any) => {
         data.current = detail
     }
     return (
-        <DetailContext.Provider value={{data: data.current, setData}}>
+        <DetailContext.Provider value={{post: data.current, setData}}>
             {children}
         </DetailContext.Provider>
         
