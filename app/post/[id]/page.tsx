@@ -28,7 +28,9 @@ const Detail = () => {
 
     if (loading){
         return (
-            <Image className="p-4 " src='/assets/images/ripple.svg' alt='loading' width={200} height={200}/>
+            <div className="w-full flex justify-center items-center h-[calc(100vh-100px)]">
+                <Image className="p-4 " src='/assets/images/ripple.svg' alt='loading' width={200} height={200}/>
+            </div>
         )
     }
     
