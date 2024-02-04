@@ -22,15 +22,20 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="flex w-full justify-between">
+            <div className="flex w-full justify-between px-8 mt-2">
                 <div className='flex items-center'>
                     <Link href='/'>
-                        <Image className='p-4 cursor-pointer' src='next.svg' alt='logo' width={100} height={100}/>
+                        <Image className='cursor-pointer w-[60px] h-[60px] rounded-full' src='/assets/images/logo.jpg' alt='logo' width={100} height={100}/>
                     </Link>
-                    <h1 className='p-4 text-[22px] font-bold'>Share</h1>
+                    <h1 className='text-[16px] font-bold text-gradient-to-r from-pink-500 to-violet-500'>Share</h1>
                 </div>
                 <div className='flex items-center'>
-                    <Link href='/post' className='py-2 px-6 cursor-pointer shake border rounded-[48px] bg-green-600 hover:bg-green-700 font-semibold text-white'>Pitch</Link>
+                    <div className='mx-3 font-[500] text-[14px] border-b-2 border-black'>All</div>
+                    <div className='mx-3 font-[500] text-[14px] text-[rgba(0,0,0,0.5)]'>Engineering</div>
+                    <div className='mx-3 font-[500] text-[14px] text-[rgba(0,0,0,0.5)]'>Finance</div>
+                </div>
+                <div className='flex items-center'>
+                    <Link href='/post' className='py-2 px-6 cursor-pointer shake border rounded-[48px] hover:bg-[rgba(0,0,0,0.02)] font-semibold text-black'>Pitch</Link>
                     {status == 'authenticated' ? 
                         <div className='p-3 cursor-pointer'>
                             <div className="w-[40px] h-[40px] border border-[2px] border-[white] rounded-full ml-[-10px] flex justify-center items-center bg-black text-white relative" onClick={showUserDetail}>
@@ -45,7 +50,7 @@ const Navbar = () => {
                             </div>
                         </div>
                         : 
-                        <div onClick={() => signIn()} className='p-3 cursor-pointer'>Log In</div>
+                        <div onClick={() => signIn()} className='cursor-pointer mx-3 font-[500] text-[14px] border-black'>Log In</div>
                     }
                 </div>
             </div>

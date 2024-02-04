@@ -39,13 +39,13 @@ const Feed = () => {
         )
     }
     return (
-            <>
+            <div className="w-3/4 border-r-2 pr-2">
                 <div className="flex justify-start items-center relative w-full">
                     <i className="fa-solid fa-magnifying-glass absolute left-[20px] font-[400]"></i>
                     <input type="text" className='h-[20px] border outline-none py-4 px-8 my-4 mx-2 rounded-[40px]' placeholder="search"/>
                 </div>
                 <Cards posts={posts}/>
-            </>
+            </div>
     )
 }
 

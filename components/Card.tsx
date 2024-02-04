@@ -23,7 +23,7 @@ const Card = ({_id, creator, post, tag}: PostType) => {
                 </div>
             </div>
             <div className="font-[600] mb-2">
-                Enter the answer entered from stake holder interview
+                Coffee Chefe
             </div>
             <div className="text-[14px] font-[200] mb-4">
                 Pay attention to the data of Mr. Plato. Since, he is the CTO of the company.

@@ -7,7 +7,6 @@ import { useSession } from "next-auth/react"
 
 const Detail = () => {
     const { data, status } = useSession()
-    console.log('d', data, typeof data)
     const {post}: any = useDetail()
     const [detail, setDetail] = useState(post)
     const [loading, setLoading] = useState(!post)
@@ -72,7 +71,7 @@ const Detail = () => {
                 </div>
                 <div className="w-2/3">
                     <div className="flex items-center justify-evenly relative">
-                        <button className="absolute left-[20px] rounded-full w-[25px] h-[25px] bg-[rgba(255,255,255,0.75)] hover:bg-white shadown-md text-[12px] border">
+                        <button className="absolute left-[20px] rounded-full w-[25px] h-[25px] bg-[rgba(255,255,255,0.75)] hover:bg-white shadown-lg text-[12px] border">
                             <i className="fa-solid fa-chevron-left text-[rgba(0,0,0,0.75)] hover:text-black"></i>
                         </button>
                         <button className="absolute right-[20px] rounded-full w-[25px] h-[25px] bg-[rgba(255,255,255,0.75)] hover:bg-white shadow-md text-[12px] border">

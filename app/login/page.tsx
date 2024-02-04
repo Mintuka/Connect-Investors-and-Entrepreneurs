@@ -52,11 +52,14 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={onSubmit} className="flex justify-center items-center h-[calc(100vh-50px)]">
-      <div className="w-1/2 md:w-1/3 px-10 py-12 border rounded-lg shadow-sm bg-[rgba(0, 0, 0, 0.5)]">
+      <div className="w-1/2 md:w-1/3 px-10 py-12 rounded-lg shadow-sm bg-[rgba(0, 0, 0, 0.5)]">
         {error && (
           <p className="text-center bg-red-300 py-4 mb-6 rounded">{error}</p>
         )}
-        <div className="w-full text-[48px] font-bold text-center mb-4">Share</div>
+        <div className="w-full flex justify-center">
+          <Image className='cursor-pointer w-[60px] h-[60px] rounded-full' src='/assets/images/logo.jpg' alt='logo' width={100} height={100}/>
+        </div>
+        <div className="w-full text-[16px] font-bold text-center mb-4">Share</div>
         <div className="mb-6">
           <input
             required
@@ -82,7 +85,7 @@ const LoginForm = () => {
         <button
           type="submit"
           style={{ backgroundColor: `${loading ? "#ccc" : "white"}` }}
-          className="inline-block px-7 py-2 bg-black-600 text-black shadow-sm font-medium text-sm leading-snug uppercase rounded hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full h-[42px] border"
+          className="inline-block px-7 py-2 bg-black-600 text-black shadow-md font-medium text-sm leading-snug uppercase rounded-[20px] hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full h-[42px] border"
           disabled={loading}
         >
           {loading ? "loading..." : "Sign In"}
@@ -93,7 +96,7 @@ const LoginForm = () => {
         </div>
 
         <a
-          className="px-7 py-2 text-black font-medium shadow-sm text-sm leading-snug uppercase rounded hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3 h-[42px] border"
+          className="px-7 py-2 text-black  font-[500] text-[14px] font-medium shadow-md leading-snug uppercase rounded-[20px] hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3 h-[42px] border"
           style={{ backgroundColor: "white" }}
           onClick={() => signIn('google')}
           role="button"
