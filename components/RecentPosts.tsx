@@ -40,6 +40,7 @@ const RecentPosts = () => {
     // }
 
     return (
+        !loading && 
         <div className="w-1/4 px-4">
             <div className="font-bold text[16px] py-2">Browse by Capital</div>
             <div className="flex flex-wrap">

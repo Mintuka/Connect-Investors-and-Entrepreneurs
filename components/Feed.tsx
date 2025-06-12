@@ -35,7 +35,7 @@ const Feed = () => {
 
     if (loading) {
         return (
-            <Image className="p-4 " src='assets/images/ripple.svg' alt='loading' width={200} height={200}/>
+            <Image className="mt-12 p-4 " src='assets/images/ripple.svg' alt='loading' width={200} height={200}/>
         )
     }
     return (
