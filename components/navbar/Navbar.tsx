@@ -31,7 +31,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center'>
                     <div className='mx-3 font-[500] text-[14px] border-b-2 border-black'>All</div>
-                    <div className='mx-3 font-[500] text-[14px] text-[rgba(0,0,0,0.5)]'>Engineering</div>
+                    <div className='mx-3 font-[500] text-[14px] text-[rgba(0,0,0,0.5)]'>Tech</div>
                     <div className='mx-3 font-[500] text-[14px] text-[rgba(0,0,0,0.5)]'>Finance</div>
                 </div>
                 <div className='flex items-center'>
