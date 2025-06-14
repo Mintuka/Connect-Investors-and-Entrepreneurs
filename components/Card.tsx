@@ -4,7 +4,7 @@ import { useDetail } from "@/hooks/DetailContext"
 import { PostType } from "@/types/Post"
 import { useRouter } from "next/navigation"
 
-const Card = ({_id, creator, post, tag}: PostType) => {
+const Card = ({_id, creator, post, tag, businessName, createdAt}: PostType) => {
     const {setData}:any = useDetail()
     const router = useRouter()
 
@@ -18,15 +18,15 @@ const Card = ({_id, creator, post, tag}: PostType) => {
             <div className="flex mb-4">
                 <Image src='assets/images/figma.svg' width={40} height={40} alt='figma' className="mr-2"/>
                 <div>
-                    <div className="text-[14px]">Mintesnot</div>
-                    <div className="text-[12px] font-[200]">15-02-2024</div>
+                    <div className="text-[14px]">{creator}</div>
+                    <div className="text-[12px] text-gray-500 font-sm">{new Date(createdAt).toDateString()}</div>
                 </div>
             </div>
             <div className="font-[600] mb-2">
-                Coffee Chefe
+                {businessName}
             </div>
-            <div className="text-[14px] font-[200] mb-4">
-                Pay attention to the data of Mr. Plato. Since, he is the CTO of the company.
+            <div className="text-[14px] text-sm text-gray-600 mb-4">
+                {post.substring(0,120)}...
             </div>
             <div className="flex">
                 <Image src='/assets/images/elon.jpg' height={45} width={45} alt="elon" className="w-[40px] h-[40px] border border-[2px] border-[white] rounded-full"></Image>

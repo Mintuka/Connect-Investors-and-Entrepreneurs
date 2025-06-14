@@ -1,16 +1,26 @@
 'use client'
 
 import Image from "next/image";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, useEffect } from "react";
 import { readFile } from "@/utils/fileReader";
+import { useSession } from 'next-auth/react'
+import { useRouter } from "next/navigation";
 
 const Post = () => {
+    const router = useRouter()
+    const { status } = useSession()
     const [submitting, setIsSubmitting] = useState(false)
     const [data, setData] = useState({post: '', creator: '', tag: ''})
     const [images, setImages] = useState([{id: 1, image:''},{id: 2, image:'', name: ''},{id: 3, image:''},{id: 4, image:''},{id: 5, image:''},{id: 6, image:''}])
     const selectImage = (image: number) => {
       document.getElementById('file_'+image)?.click()
     }
+
+    useEffect(() => {
+      if (status != 'authenticated') {
+        router.push('/login')
+      }
+    }, [status])
 
     const createPost = async (e:any) => {
         e.preventDefault();
@@ -42,6 +52,7 @@ const Post = () => {
     }
 
     return (
+        status == 'authenticated' &&
         <>
           <div className="flex flex-col items-center p-4 w-full text-sm">
             <div className="flex flex-col w-3/4">
@@ -79,7 +90,7 @@ const Post = () => {
 
             <div className="flex items-center justify-between w-3/4">
               <div className="flex flex-col flex-grow">
-                <label htmlFor="tag" className="mx-2">Invites</label>
+                <label htmlFor="tag" className="mx-2">Business Name</label>
                 <input type="text" className="border outline-none p-2 m-2" disabled={submitting} onChange={(e:ChangeEvent<any>) => setData({...data, tag: e.target.value})}/>
               </div>
               <div className="flex flex-col flex-grow">

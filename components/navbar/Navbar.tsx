@@ -30,9 +30,15 @@ const Navbar = () => {
                     <h1 className='text-[16px] font-bold text-gradient-to-r from-pink-500 to-violet-500'>Share</h1>
                 </div>
                 <div className='flex items-center'>
-                    <div className='mx-3 font-[500] text-[14px] border-b-2 border-black'>All</div>
-                    <div className='mx-3 font-[500] text-[14px] text-[rgba(0,0,0,0.5)]'>Tech</div>
-                    <div className='mx-3 font-[500] text-[14px] text-[rgba(0,0,0,0.5)]'>Finance</div>
+                    <div className='mx-3 font-[500] text-[14px] border-b-2 border-black cursor-pointer'>
+                        <Link href='/'>All</Link>
+                    </div>
+                    <div className='mx-3 font-[500] text-[14px] text-[rgba(0,0,0,0.5)] cursor-pointer'>
+                        <Link href='/'>Tech</Link>
+                    </div>
+                    <div className='mx-3 font-[500] text-[14px] text-[rgba(0,0,0,0.5)] cursor-pointer'>
+                        <Link href='/'>Finance</Link>
+                    </div>
                 </div>
                 <div className='flex items-center'>
                     <Link href='/post' className='py-2 px-6 cursor-pointer shake border rounded-[48px] hover:bg-[rgba(0,0,0,0.02)] font-semibold text-black'>Pitch</Link>
@@ -41,11 +47,11 @@ const Navbar = () => {
                             <div className="w-[40px] h-[40px] border border-[2px] border-[white] rounded-full ml-[-10px] flex justify-center items-center bg-black text-white relative" onClick={showUserDetail}>
                                 {data?.user?.name && data?.user?.name[0]}
                                 <div className={'h-[200vh] w-[200vw] absolute bg-transparent ' + (userDetailOpened ? '' : 'hidden')}></div>
-                                <div className={'border bg-slate-400 absolute top-[40px] h-[10px] w-[10px] rotate-45 ' + (userDetailOpened ? '' : 'hidden')}></div>
-                                <div className={'bg-slate-400 absolute top-[45px] right-[0px] rounded-md p-2 z-10 ' + (userDetailOpened ? '' : 'hidden')}>
-                                    <div className='text-center p-1'>{data?.user?.name && data?.user?.name}</div>
-                                    <div className='p-1'>{data?.user?.email}</div>
-                                    <div onClick={handleLogOut} className='p-1 cursor-pointer text-center'>Log Out</div>
+                                <div className={'border bg-gray-900 absolute top-[40px] h-[10px] w-[10px] rotate-45 ' + (userDetailOpened ? '' : 'hidden')}></div>
+                                <div className={'bg-gray-900 text-sm absolute top-[45px] right-[0px] rounded-md p-4 z-10 ' + (userDetailOpened ? '' : 'hidden')}>
+                                    <div className='text-center mb-2 p-1'>{data?.user?.name && data?.user?.name}</div>
+                                    <div className='p-1 mb-3'>{data?.user?.email}</div>
+                                    <div onClick={handleLogOut} className='p-1 cursor-pointer border rounded-full text-center'>Log Out</div>
                                 </div>
                             </div>
                         </div>

@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, Suspense, useEffect, useState } from "react";
 
-const LoginForm = () => {
+const Login = () => {
+  const {status} = useSession()
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [formValues, setFormValues] = useState({
@@ -16,6 +17,12 @@ const LoginForm = () => {
 
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/profile";
+
+  useEffect(() => {
+    if (status == 'authenticated') {
+      router.push('/')
+    }
+  }, [status])
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -98,7 +105,7 @@ const LoginForm = () => {
         <a
           className="px-7 py-2 text-black  font-[500] text-[14px] font-medium shadow-md leading-snug uppercase rounded-[20px] hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3 h-[42px] border"
           style={{ backgroundColor: "white" }}
-          onClick={() => signIn('google')}
+          onClick={() =>{signIn('google')}}
           role="button"
         >
           <Image src='assets/images/google.svg' height={30} width={30} alt='google'/>
@@ -108,5 +115,13 @@ const LoginForm = () => {
     </form>
   );
 };
+
+const LoginForm = () => {
+  return (
+    <Suspense>
+      <Login/>
+    </Suspense>
+  )
+}
 
 export default LoginForm
