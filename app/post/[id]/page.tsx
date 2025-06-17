@@ -50,23 +50,13 @@ const Detail = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        Tags
-                    </div>
-                    <div>
-                        Capital
-                    </div>
-                    <div>
-                        Team Size
-                    </div>
-                    <div>
-                        Achievements
-                    </div>
-                    <div>
-                        Target Areas
-                    </div>
-                    <div>
-                        Investors
+                    <div className="flex flex-col items-center justify-center p-4">
+                        <div className="text-[30px] text-red-500 font-bold flex items-center">
+                            1,500+ <span className="text-gray-700 text-xl ml-2">startups</span>
+                        </div>
+                        <div className="text-[30px] text-red-500 font-bold flex items-center">
+                            200+ <span className="text-gray-700 text-xl ml-2">Investors</span>
+                        </div>
                     </div>
                 </div>
                 <div className="w-2/3">
@@ -86,7 +76,7 @@ const Detail = () => {
                         <div className="w-[5px] h-[5px] bg-[rgba(0,0,0,0.25)] m-2 rounded-full"></div>
                         <div className="w-[5px] h-[5px] bg-[rgba(0,0,0,0.25)] m-2 rounded-full"></div>
                     </div>
-                    <div className="w-full text-[13px] text-justify font-[400] p-4 my-2 border rounded-md">
+                    <div className="w-full text-sm text-justify text-gray-700 p-4 my-2 border rounded-md">
                         Introducing "BrewHub," a dynamic coffee business poised to revolutionize the industry. At BrewHub, we understand that coffee is not just a beverage; it's a cultural experience. Our business pitch revolves around crafting an exceptional coffee journey for our customers, sourcing only the finest beans from sustainable and ethical suppliers. We prioritize quality, flavor, and variety, offering a meticulously curated selection of single-origin blends and artisanal roasts. What sets BrewHub apart is our commitment to community engagement; we envision each BrewHub location as a local hub for coffee enthusiasts, fostering a sense of belonging through carefully designed spaces for work, relaxation, and socializing. Whether it's the morning commuter seeking a quick pick-me-up or the connoisseur craving a unique tasting experience, BrewHub is dedicated to delivering the perfect cup of coffee, consistently elevating the coffee culture and experience for our diverse customer base. Join us in the BrewHub movement, where every sip tells a story.
                     </div>
                 </div>
